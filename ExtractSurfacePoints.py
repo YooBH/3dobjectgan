@@ -68,13 +68,15 @@ for category in categories:
         save_path = os.path.join(save_cat_dir, filename.split('.')[0] + '.stl')
         if os.path.exists(save_path):
             continue
-        now = datetime.datetime.now()
-        # print(now.strftime('%y%m%d - %H:%M:%S'), ' ', '진행')
-        # stl 파일로 변환
-        mesh = trimesh.load(file_path)
-        mesh.export(save_path)
-        now = datetime.datetime.now()
-        # print(now.strftime('%y%m%d - %H:%M:%S'), ' ', filename, '저장 완료')
+        try:
+            now = datetime.datetime.now()
+            mesh = trimesh.load(file_path)
+            mesh.export(save_path)
+            now = datetime.datetime.now()
+            print(now.strftime('%y%m%d - %H:%M:%S'), ' ', filename, '저장 완료')
+        except Exception as e:
+            print("Error:", e)
+            continue
 
 now = datetime.datetime.now()
 print('off to stl (train) complate')
@@ -92,13 +94,15 @@ for category in categories:
         save_path = os.path.join(save_cat_dir, filename.split('.')[0] + '.stl')
         if os.path.exists(save_path):
             continue
-        now = datetime.datetime.now()
-        # print(now.strftime('%y%m%d - %H:%M:%S'), ' ', '진행')
-        # stl 파일로 변환
-        mesh = trimesh.load(file_path)
-        mesh.export(save_path)
-        now = datetime.datetime.now()
-        # print(now.strftime('%y%m%d - %H:%M:%S'), ' ', filename, '저장 완료')
+        try:
+            now = datetime.datetime.now()
+            mesh = trimesh.load(file_path)
+            mesh.export(save_path)
+            now = datetime.datetime.now()
+            print(now.strftime('%y%m%d - %H:%M:%S'), ' ', filename, '저장 완료')
+        except Exception as e:
+            print("Error:", e)
+            continue
 
 now = datetime.datetime.now()
 print('off to stl (test) complate')
