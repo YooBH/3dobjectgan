@@ -73,7 +73,6 @@ for category in categories:
             mesh = trimesh.load(file_path)
             mesh.export(save_path)
             now = datetime.datetime.now()
-            print(now.strftime('%y%m%d - %H:%M:%S'), ' ', filename, '저장 완료')
         except Exception as e:
             print("Error:", e)
             continue
@@ -99,7 +98,6 @@ for category in categories:
             mesh = trimesh.load(file_path)
             mesh.export(save_path)
             now = datetime.datetime.now()
-            print(now.strftime('%y%m%d - %H:%M:%S'), ' ', filename, '저장 완료')
         except Exception as e:
             print("Error:", e)
             continue
