@@ -60,8 +60,8 @@ for category in categories:
     save_cat_dir = os.path.join(save_dir, category)
     if not os.path.exists(save_cat_dir):
         os.makedirs(save_cat_dir)
-    count = 0
-    for filename in enumerate(os.listdir(cat_dir)):
+    files = os.listdir(cat_dir)
+    for filename in files:
         file_path = os.path.join(cat_dir, filename)
         now = datetime.datetime.now()
         print(now.strftime('%y%m%d - %H:%M:%S'), ' ', filename)
@@ -84,10 +84,8 @@ for category in categories:
     save_cat_dir = os.path.join(save_dir, category)
     if not os.path.exists(save_cat_dir):
         os.makedirs(save_cat_dir)
-    count = 0
-    for idx, filename in enumerate(os.listdir(cat_dir)):
-        if idx >= 50:
-            break
+    files = os.listdir(cat_dir)
+    for filename in files:
         file_path = os.path.join(cat_dir, filename)
         now = datetime.datetime.now()
         print(now.strftime('%y%m%d - %H:%M:%S'), ' ', filename)
